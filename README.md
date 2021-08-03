@@ -4,6 +4,7 @@ A web application using flask protocol for viewing ticket details from the Zende
 ## Requirements
 - Python 3.7
 - Flask
+- venv
 - User name and Token to access the Zendesk API. Generate the OAth token following this link https://support.zendesk.com/hc/en-us/articles/203663836-Using-OAuth-authentication-with-your-application
 
 ## Installing
@@ -12,7 +13,7 @@ A web application using flask protocol for viewing ticket details from the Zende
 
 `source env/bin/activate`
 
-`pip install -m requirements.txt`
+`pip install -r requirements.txt`
 
 ## Running
 
