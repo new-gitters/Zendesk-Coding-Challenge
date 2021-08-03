@@ -14,10 +14,24 @@ A web application using flask protocol for viewing ticket details from the Zende
 
 `pip install -m requirements.txt`
 
+## Running
+
 `cd zendesk/src`
+
 
 `python main.py`
 
 
-## Running
 Once the flask framework running successfully. Please copy the link http://127.0.0.1:5000/ to your local browser to view and interact with this application
+
+## Testing
+After complete the Intsalling step
+
+`cd zendesk/tests`
+
+`python unit_test.py`
+
+This program will run the unit testing for the request functions used in the program.
+
+
+
