@@ -3,7 +3,7 @@ import requests
 
 header={"Authorization":"Bearer 98d75e177bfc788af652d53886bd388ab2847e6cea5add00441490ff311ae8d5"} 
 def get_list_tickets(page=1):
-    page="https://zccadmin.zendesk.com/api/v2/tickets.json?per_page=10&page={}".format(page)
+    page="https://zccadmin.zendesk.com/api/v2/tickets.json?per_page=25&page={}".format(page)
     res=requests.get(url=page,headers=header)
     context={}
     if res.status_code==200:
