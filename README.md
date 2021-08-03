@@ -9,6 +9,8 @@ A web application using flask protocol for viewing ticket details from the Zende
 
 ## Installing
 ### Unix/Mac
+Redirect to the downloaded project folder. Run the commands in terminal.
+
 `python3 -m venv env`
 
 `source env/bin/activate`
