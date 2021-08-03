@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+  <head>
+    <title class="text-center">Tabular Tikcets Information</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="text-center">Tabular Tikcets Information</h1>
+      <table id="data" class="table table-striped">
+        <thead>
+            {%- for column in data.header %}
+               <th>{{ column }}</th>
+            {%- endfor %}
+           </thead>
+    
+        <tbody>
+          {% for row in data.rows %}
+            <tr>
+              <td>{{ row.id }}</td>
+              <td>{{ row.subject }}</td>
+              <td>{{ row.requester_id }}</td>
+              <td>{{ row.status }}</td>
+              <td>{{ row.priority }}</td>
+              <td>
+                <form action="{{ url_for('getTicketById') }}" method="POST">
+                    <input  name="{{row.id}}" type="hidden" value="{{row.url}}">
+                    <button type="submit"> view </button>
+                </form>
+              </td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+      <form method ="post" action=#>
+        <button type="table" class="btn btn-primary btn-lg pull-left" name="prev" value="submit_a"> prev </button>
+        <button type="table" class="btn btn-primary btn-lg pull-right" name="next" value="submit_b"> next </button>
+      </form> 
+      <div class="text-center">Showing: {{data.first}} - {{data.last}} Total:{{data.count}}</div>
+    </div>
+    <script type="text/javascript" charset="utf8" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.js"></script>
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.25/js/dataTables.bootstrap5.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twbs-pagination/1.4.2/jquery.twbsPagination.min.js"></script>
+
+
+    {% block scripts %}
+    <script>
+        $(document).ready(function () {
+          $('#data').bootstrapTable();
+        });
+    </script>
+    {% endblock %}
+  </body>
+</html>

@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <title>Ticket Single View</title>
+  </head>
+  <body>
+    <h1 class="text-center">Detailed Information of Ticket-{{ticket.id}}</h1>
+
+    <div class="card" style="width:800px; margin:0 auto;">
+        <div class="card-body">
+          <h5 class="card-title">Subject</h5>
+          <p class="card-text">{{ticket.subject}}</p>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">requester id: {{ticket.requester_id}}</li>
+          <li class="list-group-item">created time: {{ticket.created_at}}</li>
+          <li class="list-group-item">priority: {{ticket.priority}}</li>
+          <li class="list-group-item">status: {{ticket.status}}</li>
+        </ul>
+        <div class="card-body">
+        <h5 class="card-title">Description</h5>
+        <p class="card-text">{{ticket.description}}</p>
+        </div>
+      </div>
+      <form method ="post" action='/table' class="text-center">
+        <button type="table" name="home" value="home" > HOME_PAGE </button>
+      </form> 
+    
+  </body>
+</html>
